@@ -31,5 +31,6 @@ public class problem3 {
         System.out.printf("The highest grade is %.2f for the student %s\n", max_grade , max_name);
         System.out.printf("The second highest grade is %.2f for the student %s\n", second_max_grade , second_max_name);
 
+        s.close();
     }
 }
