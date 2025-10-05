@@ -21,7 +21,7 @@ public class problem8 {
         System.out.print("Enter the number of days elapsed since today : ");
         int added = s.nextInt();
 
-        int mod = (today + added) % 6;
+        int mod = (today + added) % 7;
 
         String future;
 
