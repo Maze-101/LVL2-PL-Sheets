@@ -26,7 +26,7 @@ public class problem11 {
         Double triangle2 = Math.sqrt(s2 * (s2 - d2) * (s2 - d3) * (s2 - base));
     
         Double total_area = triangle1 + triangle2;
-        System.out.println("Total area of the triangle is " + total_area);
+        System.out.println("Total area of the Polygon is " + total_area);
     
     }
 }
