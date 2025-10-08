@@ -19,5 +19,7 @@ public class problem7 {
         }
 
         System.out.println();
+
+        s.close();
     }
 }

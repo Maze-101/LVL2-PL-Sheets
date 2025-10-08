@@ -23,5 +23,7 @@ public class problem9 {
         }
 
         System.out.println("The minimum number is : " + min(array) );
+    
+        s.close();
     }
 }
