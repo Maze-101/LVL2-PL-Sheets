@@ -1,32 +1,43 @@
 package PL2_Sheets.sheet1;
 
-public class problem11 {
-    public static void main(String[] args) {
+public class problem11 { 
+    public static void main(String[] args) {  
+
+        final double earthRadius = 6371.01;  
+
+        final double x_Charlotte = Math.toRadians(35.2270869);
+        final double y_Charlotte = Math.toRadians(-80.8431267); 
+        final double x_Atlanta = Math.toRadians(33.7489954); 
+        final double y_Atlanta = Math.toRadians(-84.3879824); 
+        final double x_Orlando = Math.toRadians(28.5383355); 
+        final double y_Orlando = Math.toRadians(-81.3792365); 
+        final double x_Savannah = Math.toRadians(32.0835407); 
+        final double y_Savannah = Math.toRadians(-81.0998342); 
         
-        final Double X_CHARLOTTE = 35.2270869;
-        final Double Y_CHARLOTTE = -80.8431267;
-        final Double X_SAVANNAH = 32.0835407;
-        final Double Y_SAVANNAH = -81.0998342;
-        final Double X_ORLANDO = 28.5383355;
-        final Double Y_ORLANDO = -81.3792365;
-        final Double X_ATLANTA = 33.7489954;
-        final Double Y_ATLANTA = -84.3879824;
-
-        Double d1 = Math.sqrt(Math.pow((X_CHARLOTTE - X_SAVANNAH),2) + Math.pow((Y_CHARLOTTE - Y_SAVANNAH),2));
-        Double d2 = Math.sqrt(Math.pow((X_ORLANDO - X_SAVANNAH),2) + Math.pow((Y_ORLANDO - Y_SAVANNAH),2));
-        Double d3 = Math.sqrt(Math.pow((X_ORLANDO - X_ATLANTA),2) + Math.pow((Y_ORLANDO - Y_ATLANTA),2));
-        Double d4 = Math.sqrt(Math.pow((X_CHARLOTTE - X_ATLANTA),2) + Math.pow((Y_CHARLOTTE - Y_ATLANTA),2));
-
-        Double base = Math.sqrt(Math.pow((X_SAVANNAH - X_ATLANTA),2) + Math.pow((Y_SAVANNAH - Y_ATLANTA),2));
-
-        Double s1 = (d1 + d4 + base) / 2;
-        Double s2 = (d2 + d3 + base) / 2;
-
-        Double triangle1 = Math.sqrt(s1 * (s1 - d1) * (s1 - d4) * (s1 - base));
-        Double triangle2 = Math.sqrt(s2 * (s2 - d2) * (s2 - d3) * (s2 - base));
+        double d_Charlotte_Atlanta = earthRadius * Math.acos(Math.sin(x_Charlotte) * Math.sin(x_Atlanta)  
+                                    + Math.cos(x_Charlotte) * Math.cos(x_Atlanta) * Math.cos(y_Charlotte-y_Atlanta)); 
+        
+        double d_Orlando_Atlanta = earthRadius * Math.acos(Math.sin(x_Orlando) * Math.sin(x_Atlanta)  
+                                    + Math.cos(x_Orlando) * Math.cos(x_Atlanta) * Math.cos(y_Orlando-y_Atlanta));  
+        
+        double d_Orlando_Savannah = earthRadius * Math.acos(Math.sin(x_Orlando) * Math.sin(x_Savannah)  
+                                    + Math.cos(x_Orlando) * Math.cos(x_Savannah) * Math.cos(y_Orlando-y_Savannah));  
+        
+        double d_Charlotte_Savannah = earthRadius * Math.acos(Math.sin(x_Charlotte) * Math.sin(x_Savannah)  
+                                    + Math.cos(x_Charlotte) * Math.cos(x_Savannah) * Math.cos(y_Charlotte-y_Savannah));  
+        
+        double d_Charlotte_Orlando = earthRadius * Math.acos(Math.sin(x_Charlotte) * Math.sin(x_Orlando)  
+                                    + Math.cos(x_Charlotte) * Math.cos(x_Orlando) * Math.cos(y_Charlotte-y_Orlando));  
     
-        Double total_area = triangle1 + triangle2;
-        System.out.println("Total area of the Polygon is " + total_area);
-    
+        double s1 = (d_Charlotte_Atlanta + d_Orlando_Atlanta + d_Charlotte_Orlando) / 2; 
+        
+        double area1 = Math.sqrt(s1 * (s1 - d_Charlotte_Atlanta) * (s1 - d_Orlando_Atlanta) * (s1 - d_Charlotte_Orlando)); 
+        
+        double s2 = (d_Charlotte_Savannah + d_Orlando_Savannah + d_Charlotte_Orlando) / 2; 
+        
+        double area2 = Math.sqrt(s2 * (s2 - d_Charlotte_Savannah) * (s2 - d_Orlando_Savannah) * (s2 - d_Charlotte_Orlando)); 
+        
+        double finalArea = area1 + area2; 
+        System.out.println("The area is: " + finalArea); 
     }
 }
