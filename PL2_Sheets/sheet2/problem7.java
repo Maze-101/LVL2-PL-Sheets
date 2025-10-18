@@ -15,7 +15,7 @@ public class problem7 {
         System.out.print("The reversed version of the numbers you entered : ");
     
         for (int i = 0; i < a.length; i++) {
-            System.out.print(a[10-i-1] + " ");
+            System.out.print(a[(a.length)-i-1] + " ");
         }
 
         System.out.println();
