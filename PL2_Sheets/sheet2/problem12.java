@@ -1,4 +1,4 @@
-package PL2_Sheets.sheet2;
+package sheet2;
 
 public class problem12 {
     public static double distance(double[] city1, double[] city2){

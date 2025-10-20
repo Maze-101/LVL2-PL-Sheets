@@ -1,4 +1,4 @@
-package PL2_Sheets.sheet1;
+package sheet1;
 
 public class problem2 {
     public static void main(String[] args) {

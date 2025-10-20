@@ -1,4 +1,4 @@
-package PL2_Sheets.sheet2;
+package sheet2;
 
 public class problem11 {
     public static void sort(int[] correct){ // Bubble sort algorithm

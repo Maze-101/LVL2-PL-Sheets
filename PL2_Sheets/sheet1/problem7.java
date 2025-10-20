@@ -1,4 +1,4 @@
-package PL2_Sheets.sheet1;
+package sheet1;
 import java.util.Random ;
 
 public class problem7 {

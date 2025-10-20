@@ -1,4 +1,4 @@
-package PL2_Sheets.sheet2;
+package sheet2;
 import java.util.*;
 public class problem6 {
 
