@@ -1,3 +1,4 @@
+package sheet3;
 import java.util.Random;
 
 public class randomProlbem {
