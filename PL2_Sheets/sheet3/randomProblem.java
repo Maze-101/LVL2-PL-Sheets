@@ -1,7 +1,7 @@
 package sheet3;
 import java.util.Random;
 
-public class randomProlbem {
+public class randomProblem {
     public static void main(String[] args) {
         Random r = new Random(1000);
 
