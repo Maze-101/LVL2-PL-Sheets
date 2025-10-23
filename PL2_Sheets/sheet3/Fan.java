@@ -11,14 +11,14 @@ public class Fan {
     private double radius;
     private String color;
 
-    Fan(){
+    public Fan(){
         speed = SLOW;
         on = false;
         radius = 5.0;
         color = "blue";
     }
 
-    Fan(int speed, boolean status, double radius, String color){
+    public Fan(int speed, boolean status, double radius, String color){
         this.speed = speed;
         this.on = status;
         this.radius = radius;

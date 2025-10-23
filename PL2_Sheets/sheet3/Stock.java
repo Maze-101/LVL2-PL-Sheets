@@ -4,7 +4,7 @@ public class Stock {
     private String symbol , name;
     private double previousClosingPrice , currentPrice;
 
-    Stock(String symbol, String name){
+    public Stock(String symbol, String name){
         this.symbol = symbol;
         this.name = name;
     }
